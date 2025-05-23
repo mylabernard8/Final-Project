@@ -28,3 +28,51 @@
         - Restitution
         - Friction
 
+## setup()
+- Set up canvas
+  - createCanvas(800,600)
+- Create the 'Matter.js' engine and world
+- Define both gravity and the other engine options
+- Add in the floor, walls, and platforms using the 'Platform' and 'Boundary' classes
+- Add in the initial ball using the 'Ball' class
+- Add in the spawnButton (UI button) to add in new balls
+
+
+## draw()
+- Update the Matter.js engine:
+    - Engine.update(engine)
+- Clear the background
+- Loop through each array (balls, platforms, etc.) and call .show() to draw
+- Check if any balls are off-screen, and remove them if necessary
+- Optionally display the number of balls or a message when the screen is empty
+
+## Classes
+- Ball:
+    - Properties:
+      - this.body - a Matter.js circle body
+      - this.r - radius
+    - Actions:
+      - show() - draws the ball at its current position
+      - isOffScreen() — returns true if the ball falls out of view
+        
+- Platform:
+   - Properties:
+      - this.body — a static rectangle body
+      - this.w
+      - this.h
+      - this.angle
+  - Actions:
+      - show() — draws the platform with rotation
+
+- Boundary:
+   - Properties:
+      - this.body — a static rectangle
+      - this.w
+      - this.h
+  - Actions:
+      - show() — draws walls/floor
+
+
+
+
+
